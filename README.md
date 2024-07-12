@@ -1,4 +1,3 @@
-# M1L3
 from flask import Flask 
 import random
 
@@ -9,7 +8,11 @@ lista_consejos=["La mayoría de las personas que sufren adicción tecnológica e
                 "Según un estudio de 2019, más del 60% de las personas responden a mensajes de trabajo en sus smartphones en los 15 minutos siguientes a salir del trabajo"]
 
 @app.route("/")
-def Consejos():
+def index():
+    return f'<h1>Hola esta es mi pagina web y te dare consejos de la dependencia tecnologica</h1><a href="/nuevo_consejo">VEAMOS UN CONSEJO AL AZAR</a>'
+
+@app.route("/nuevo_consejo")
+def listas():
     return f'<p>{random.choice(lista_consejos)}</p>'
 
 app.run(debug=True)
